@@ -108,6 +108,10 @@ NestJs 튜토리얼22222
 - Interceptor: 응답 매핑 및 캐시 관리. 요청 로깅 등
 - Guard -> Interceptor -> Pipe -> Controller -> Service -> Controller -> Interceptor -> Filter 순으로 call 된다
 
+## 인증된 유저의 접근
+
+- 기존 진행한 인증관련은 Auth에서 구현하고 Auth에서 사용했다. 이를 다른 Module에서도 사용하기 위해서는 다른 Module에서 import가 필요하다.
+
 ---
 
 <p align="center">
