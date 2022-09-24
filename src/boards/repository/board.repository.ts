@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common'
 import { DataSource, Repository } from 'typeorm'
-import { Board, BoardStatus } from './board.entity'
-import { CreateBoardDto } from './dto/create-board.dto'
+import { CreateBoardDto } from '../dto'
+import { Board, BoardStatus } from '../entity'
 
 /**
  * README.md 반드시 참고

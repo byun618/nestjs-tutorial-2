@@ -5,8 +5,8 @@ import {
 } from '@nestjs/common'
 import * as bcrypt from 'bcryptjs'
 import { DataSource, Repository } from 'typeorm'
-import { AuthCredentialDto } from './dto'
-import { User } from './user.entity'
+import { AuthCredentialDto } from '../dto'
+import { User } from '../entity'
 
 /**
  * README.md 반드시 참고
