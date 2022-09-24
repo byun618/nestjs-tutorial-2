@@ -2,6 +2,29 @@
 
 NestJs 튜토리얼22222
 
+---
+
+## Module이란
+
+- @Module 데코레이터 달린 클래스. 하나 이상의 루트 모듈 존재.
+- 밀접하게 관련된 기능의 집합 ex) 유저 모듈, 주문 모듈, 챗 모듈 ...
+- 싱글톤. 어디든 주입 가능
+
+## Controller란
+
+- @Controller
+- 들어오는 요청을 처리하고 클라이언트로 응답 반환
+- @Controller('~~')로 경로 처리
+- @Get, @Post 등 handler 존재
+
+## Provider란
+
+- Nest의 기본 개념.
+- Service, Repository, Factory, Helper 등 모두 Provider다.
+- 종속성을 주입할 수 있다. 객체는 다양한 관계를 만들고 인스턴스를 연결한다.
+- Service는 공통 개념. @Injectable로 감싸져서 Module에 제공
+- Provider를 등록하기 위해서는 @Module에 추가한다.
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
