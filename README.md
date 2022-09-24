@@ -25,6 +25,43 @@ NestJs 튜토리얼22222
 - Service는 공통 개념. @Injectable로 감싸져서 Module에 제공
 - Provider를 등록하기 위해서는 @Module에 추가한다.
 
+## DTO
+
+- Data Transfer Object
+- 계층간 데이터 교환을 위한 객체
+- DB에서 데이터를 얻어 Service나 Controller 등올 보낼때 사용하는 객체
+- **데이터가 네트워크를 통해 전송되는 방법을 정의**
+- Class를 이용해서 구성, Pipe와 같은 기능을 이용하기에 유용
+- 데이터 유효성 체크에 사용
+- 많은 프로퍼티를 가지고 있다면 유지 보수 하기에 용이하다.
+
+## Pipe
+
+- @Injectable 데코레이터로 달린 클래스
+- Data Transformation과 Data Validation을 위해 사용
+- Controller에 의해 처리되는 인수에 작동(Route Handler가 처리하는 인수에 대해 동작)
+- Handler로 가기 전에 동작
+- Handler-Level, Parameter-Level, Global-Level
+- 기본 제공하는 Built-In Pipe
+  - Validation Pipe
+  - PraseInt Pipe
+  - ParseBool Pipe
+  - ParseArray Pipe
+  - ParseUUID Pipe
+  - DefaultValue Pipe
+- 필요한 모듈
+  - class-validator class-transformer
+
+## Custom Pipe
+
+- PipeTransform 인터페이스를 커스텀 파이프에 구현
+- transform()
+  - value, metadata
+  - value: 처리가 된 인자의 값
+  - metadata: 인자에 대한 메타데이터를 포함한 객체
+
+---
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
