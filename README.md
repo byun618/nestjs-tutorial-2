@@ -107,6 +107,7 @@ NestJs 튜토리얼22222
 - Guards: 인증 미들웨어
 - Interceptor: 응답 매핑 및 캐시 관리. 요청 로깅 등
 - Guard -> Interceptor -> Pipe -> Controller -> Service -> Controller -> Interceptor -> Filter 순으로 call 된다
+- JwtGuard를 구현하여, PassportModule을 따로 export 하지 않아도 되게 변경
 
 ## 인증된 유저의 접근
 
