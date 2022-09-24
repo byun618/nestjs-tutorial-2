@@ -71,6 +71,7 @@ NestJs 튜토리얼22222
 - @Entity: 클래스가 엔티티임
 - @PrimaryGeneratedColumn: PK
 - @Column column
+- @Unique(['~~'])
 
 ## Repository
 
