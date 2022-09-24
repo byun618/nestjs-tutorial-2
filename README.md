@@ -77,6 +77,10 @@ NestJs 튜토리얼22222
 - Entity 객체와 함께 동작, CRUD 처리
 - DB 관련된 작업을 처리하게끔 짠 패턴을, Repository Pattern
 - 사용할 module.ts 에 imports: [~~~.forFeature([])] 추가
+- 기존 @EntityRepository 데코레이터는 deprecated, 다양한 방법으로 이와 유사하게 구현 가능함
+  - [개념](https://velog.io/@username1103/NestJS-TypeORM)
+  - [@Injectable을 이용해 하나의 Provider로 구현](https://stackoverflow.com/questions/72549668/how-to-do-custom-repository-using-typeorm-mongodb-in-nestjs)
+  - [@EntityRepository 의 역할을 하는 Custom Decorator를 구현](https://greeng00se.tistory.com/57)
 
 ---
 
