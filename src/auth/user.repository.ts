@@ -5,7 +5,7 @@ import {
 } from '@nestjs/common'
 import * as bcrypt from 'bcryptjs'
 import { DataSource, Repository } from 'typeorm'
-import { AuthCredentialDto } from './dto/auth-credential.dto'
+import { AuthCredentialDto } from './dto'
 import { User } from './user.entity'
 
 /**
@@ -21,7 +21,7 @@ export class UserRepository extends Repository<User> {
     )
   }
 
-  async createUser(authCredentialDto: AuthCredentialDto): Promise<void> {
+  async createUser(authCredentialDto: AuthCredentialDto): Promise<User> {
     try {
       const salt = await bcrypt.genSalt()
       const password = await bcrypt.hash(authCredentialDto.password, salt)
@@ -29,6 +29,8 @@ export class UserRepository extends Repository<User> {
       const user = this.create({ ...authCredentialDto, password })
 
       await this.save(user)
+
+      return user
     } catch (err) {
       if (err.code === '23505') {
         throw new ConflictException('Username already exists')

@@ -83,6 +83,31 @@ NestJs 튜토리얼22222
   - [@Injectable을 이용해 하나의 Provider로 구현](https://stackoverflow.com/questions/72549668/how-to-do-custom-repository-using-typeorm-mongodb-in-nestjs)
   - [@EntityRepository 의 역할을 하는 Custom Decorator를 구현](https://greeng00se.tistory.com/57)
 
+## JWT
+
+- 필요한 모듈
+  - @nestjs/jwt @nestjs/passport passport passport-jwt
+- Jwt와 passport를 이용할 module 파일에 JwtModule과 PassportModule을 import 한다.
+- 토큰 인증하고, req 객체에 user 데이터를 실을수 있다. Strategy를 이용
+  - 필요한 모듈: @types/passport-jwt
+  - JwtStrategy를 생성하고 PassportStrategy를 extends 한다.
+    - super를 통해 secretKey와 header의 어떤 부분(Bearer)에 담겨져 오는지 설정
+    - 토큰이 유효한지 확인이 되면 validate 함수를 통해 로직 동작
+- 항상 종속성 주입에 대해서 생각하자.
+- JwtStrategy를 사용하기 위해서
+  - auth.module providers에 추가해준다. 또한, 이 Strategy를 다른 module에서도 사용하게 하기 위해서는 exports에도 추가를 한다.
+  - useGuard를 이용한다.
+- Custom Decorator를 이용하면 req.user가 아니라 user로 갖고 올수 있다.
+
+## Middleware
+
+- Pipe, Filters, Guards, Interceptors
+- Pipe: 요청 유효성 검사 및 페이로드 변환
+- Filters: 오류 처리 미들웨어
+- Guards: 인증 미들웨어
+- Interceptor: 응답 매핑 및 캐시 관리. 요청 로깅 등
+- Guard -> Interceptor -> Pipe -> Controller -> Service -> Controller -> Interceptor -> Filter 순으로 call 된다
+
 ---
 
 <p align="center">
