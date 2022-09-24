@@ -60,6 +60,24 @@ NestJs 튜토리얼22222
   - value: 처리가 된 인자의 값
   - metadata: 인자에 대한 메타데이터를 포함한 객체
 
+## TypeORM
+
+- 필요한 모듈
+  - pg typeorm @nestjs/typeorm
+
+## Entity
+
+- DB Table로 변환되는 Class
+- @Entity: 클래스가 엔티티임
+- @PrimaryGeneratedColumn: PK
+- @Column column
+
+## Repository
+
+- Entity 객체와 함께 동작, CRUD 처리
+- DB 관련된 작업을 처리하게끔 짠 패턴을, Repository Pattern
+- 사용할 module.ts 에 imports: [~~~.forFeature([])] 추가
+
 ---
 
 <p align="center">
