@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common'
+import { User } from 'src/auth/entity'
 import { DataSource, Repository } from 'typeorm'
 import { CreateBoardDto } from '../dto'
 import { Board, BoardStatus } from '../entity'
@@ -16,10 +17,14 @@ export class BoardRepository extends Repository<Board> {
     )
   }
 
-  async createBoard(createBoardDto: CreateBoardDto): Promise<Board> {
+  async createBoard(
+    createBoardDto: CreateBoardDto,
+    user: User,
+  ): Promise<Board> {
     const board = this.create({
       ...createBoardDto,
       status: BoardStatus.PUBLIC,
+      user,
     })
 
     await this.save(board)

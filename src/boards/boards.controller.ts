@@ -11,6 +11,8 @@ import {
   UsePipes,
   ValidationPipe,
 } from '@nestjs/common'
+import { GetUser } from 'src/auth/decorator'
+import { User } from 'src/auth/entity'
 import { JwtGuard } from 'src/auth/guard'
 import { BoardsService } from './boards.service'
 import { CreateBoardDto } from './dto'
@@ -29,8 +31,11 @@ export class BoardsController {
 
   @Post()
   @UsePipes(ValidationPipe)
-  createBoard(@Body() createBoardDto: CreateBoardDto): Promise<Board> {
-    return this.boardsService.createBoard(createBoardDto)
+  createBoard(
+    @Body() createBoardDto: CreateBoardDto,
+    @GetUser() user: User,
+  ): Promise<Board> {
+    return this.boardsService.createBoard(createBoardDto, user)
   }
 
   @Get('/:id')
@@ -39,8 +44,11 @@ export class BoardsController {
   }
 
   @Delete('/:id')
-  deleteBoard(@Param('id', ParseIntPipe) id: number): Promise<void> {
-    return this.boardsService.deleteBoard(id)
+  deleteBoard(
+    @Param('id', ParseIntPipe) id: number,
+    @GetUser() user: User,
+  ): Promise<void> {
+    return this.boardsService.deleteBoard(id, user)
   }
 
   @Patch('/:id/status')

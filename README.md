@@ -113,6 +113,26 @@ NestJs 튜토리얼22222
 
 - 기존 진행한 인증관련은 Auth에서 구현하고 Auth에서 사용했다. 이를 다른 Module에서도 사용하기 위해서는 다른 Module에서 import가 필요하다.
 
+## Entity Relation
+
+- Entity 작성시, @ManyToOne, @OneToOne 등의 데코레이터로 설정한다.
+- Table은 id post-fix로 자동으로 붙는다.
+- 생성시에는
+
+```ts
+const board = this.create({
+  ...createBoardDto,
+  status: BoardStatus.PUBLIC,
+  user,
+})
+```
+
+- 조건을 걸어 쿼리 또는 삭제 시에는
+
+```ts
+const result = await this.boardRepository.delete({ id, user })
+```
+
 ---
 
 <p align="center">
