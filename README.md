@@ -133,6 +133,17 @@ const board = this.create({
 const result = await this.boardRepository.delete({ id, user })
 ```
 
+## 로그
+
+- Built-in 된 log 클래스가 있다.
+- construct 위에 property로 선언하여 사용
+
+```ts
+private logger = new Logger('Board Controller')
+```
+
+- 종류에는 log, warning, error, debug, verbose
+
 ---
 
 <p align="center">
