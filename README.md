@@ -144,6 +144,10 @@ private logger = new Logger('Board Controller')
 
 - 종류에는 log, warning, error, debug, verbose
 
+## Configuration
+
+- 조금 더 알맞은 적절한 방법을 찾아보자
+
 ---
 
 <p align="center">
