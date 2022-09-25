@@ -5,10 +5,10 @@ import {
   UseGuards,
   ValidationPipe,
 } from '@nestjs/common'
+import { User } from 'src/database/entity'
 import { AuthService } from './auth.service'
 import { GetUser } from './decorator'
 import { AuthCredentialDto } from './dto'
-import { User } from './entity'
 import { JwtGuard } from './guard'
 
 @Controller('auth')

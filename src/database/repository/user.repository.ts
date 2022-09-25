@@ -5,7 +5,7 @@ import {
 } from '@nestjs/common'
 import * as bcrypt from 'bcryptjs'
 import { DataSource, Repository } from 'typeorm'
-import { AuthCredentialDto } from '../dto'
+import { AuthCredentialDto } from '../../auth/dto'
 import { User } from '../entity'
 
 /**

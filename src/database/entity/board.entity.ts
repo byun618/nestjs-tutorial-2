@@ -1,5 +1,5 @@
-import { User } from 'src/auth/entity'
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm'
+import { User } from './'
 
 export enum BoardStatus {
   PUBLIC = 'PUBLIC',

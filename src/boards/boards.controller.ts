@@ -13,11 +13,10 @@ import {
   ValidationPipe,
 } from '@nestjs/common'
 import { GetUser } from 'src/auth/decorator'
-import { User } from 'src/auth/entity'
 import { JwtGuard } from 'src/auth/guard'
+import { Board, BoardStatus, User } from 'src/database/entity'
 import { BoardsService } from './boards.service'
 import { CreateBoardDto } from './dto'
-import { Board, BoardStatus } from './entity'
 import { BoardStatusValidationPipe } from './pipe/board-status-validation.pipe'
 
 @Controller('boards')

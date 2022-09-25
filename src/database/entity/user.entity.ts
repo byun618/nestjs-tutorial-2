@@ -1,4 +1,3 @@
-import { Board } from 'src/boards/entity'
 import {
   Column,
   Entity,
@@ -6,6 +5,7 @@ import {
   PrimaryGeneratedColumn,
   Unique,
 } from 'typeorm'
+import { Board } from './board.entity'
 
 @Entity()
 @Unique(['username'])
